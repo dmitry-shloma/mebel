@@ -16,7 +16,7 @@ public:
     ~AddContractWidget();
 
 private slots:
-    void on_cbCustomerType_currentIndexChanged(int index);
+    void on_cbCustomerType_activated(int index);
 
 private:
     Ui::AddContractWidget *ui;
