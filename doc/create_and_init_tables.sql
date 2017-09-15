@@ -2,73 +2,81 @@ DROP DATABASE IF EXISTS mebel;
 CREATE DATABASE mebel;
 USE mebel;
 
-/* Создание структуры таблицы contract [договор] */
-CREATE TABLE IF NOT EXISTS contract (
+/* Создание структуры таблицы order [заказ] */
+CREATE TABLE IF NOT EXISTS `order` (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    number VARCHAR(20) COMMENT 'Номер договора',
-    conclusion_date DATE COMMENT 'Дата заключения договора',
-    customer_type_id INT COMMENT 'Тип заказчика',
+    contract_number VARCHAR(20) COMMENT 'Номер договора',
+    contract_conclusion_date DATE COMMENT 'Дата заключения договора',
+    customer_species_id INT COMMENT 'Вид заказчика',
     customer_id INT COMMENT 'Заказчик',
-    furniture_kind_id INT COMMENT 'Вид мебели',
-    assembly_address TINYTEXT COMMENT 'Адрес монтажа',
+    order_species_id INT COMMENT 'Вид заказа',
+    furniture_type_id INT COMMENT 'Тип мебели',
+    installation_date DATE NULL COMMENT 'Дата монтажа',
+    is_exw BOOLEAN DEFAULT FALSE COMMENT 'Самовывоз',
+    assembly_address TINYTEXT NULL COMMENT 'Адрес монтажа',
     price DECIMAL(7,2) COMMENT 'Цена',
     initial_payment DECIMAL(7,2) COMMENT 'Первоначальный взнос',
-    remainder DECIMAL(7,2) COMMENT 'Остаток',
-    delivery_date DATE COMMENT 'Дата сдачи заказа',
-    note TINYTEXT COMMENT 'Примечание' NULL
-) COMMENT = 'Договор';
+    balance DECIMAL(7,2) COMMENT 'Остаток',
+    order_status_id INT DEFAULT 1 COMMENT 'Состояние заказа',
+    status_history TEXT COMMENT 'История изменения статуса',
+    note TINYTEXT NULL COMMENT 'Примечание'
+) COMMENT = 'Заказы';
 
-/* Создание структуры таблицы customer_type [тип заказчика] */
-CREATE TABLE IF NOT EXISTS customer_type (
+/* Создание структуры таблицы customer_species [вид заказчика] */
+CREATE TABLE IF NOT EXISTS customer_species (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(9) COMMENT 'Тип заказчика'
-) COMMENT = 'Тип заказчика';
+    species VARCHAR(9) COMMENT 'Вид'
+) COMMENT = 'Вид заказчика';
 
-/* Инициализация таблицы customer_type [тип заказчика] */
-INSERT INTO customer_type
-	(name)
+/* Инициализация таблицы customer_species [вид заказчика] */
+INSERT INTO customer_species
+	(species)
 VALUES
-	('Физ. лицо'),  # id | 1
-    ('Юр. лицо');   # id | 2
+	('физ. лицо'),  # id | 1
+    ('юр. лицо');   # id | 2
 
 /* Создание структуры таблицы customer [заказчик] */
 CREATE TABLE IF NOT EXISTS customer (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    fullname_or_shortname TINYTEXT COMMENT 'ФИО/Краткое название',
+    fullname_or_name TINYTEXT COMMENT 'ФИО/Название',
     registration_or_juridical_address TINYTEXT COMMENT 'Адрес регистрации/Юридический адрес',
     phone VARCHAR(11) COMMENT 'Телефон',
-    email TINYTEXT COMMENT 'Электронная почта' NULL,
+    email TINYTEXT NULL COMMENT 'Электронная почта',
     information_source_id INT COMMENT 'Источник информации',
-    note TINYTEXT COMMENT 'Примечание' NULL
+    note TINYTEXT NULL COMMENT 'Примечание'
 ) COMMENT = 'Заказчик';
 
 /* Создание структуры таблицы natural_person [физическое лицо] */
 CREATE TABLE IF NOT EXISTS natural_person (
-    id INT PRIMARY KEY,    # id устанавливается вручную, в зависимости от id из таблицы customer
-    birthday DATE COMMENT 'Дата рождения',
-    ppt_series_number VARCHAR(15) COMMENT 'Серия и номер паспорта',
-    ppt_issued_by TINYTEXT COMMENT 'Орган, выдавший паспорт',
-    ppt_issued_starting_from DATE COMMENT 'Дата выдачи паспорта'
+    id INT PRIMARY KEY,    # id устанавливается запросом, и соответствует макс. значению id из таблицы customer
+    birth_date DATE COMMENT 'Дата рождения',
+    ppt_series_and_number VARCHAR(15) COMMENT 'Серия и номер паспорта',
+    ppt_issued_by TINYTEXT COMMENT 'Кем выдан',
+    ppt_issue_date DATE COMMENT 'Дата выдачи'
 ) COMMENT = 'Физическое лицо';
 
 /* Создание структуры таблицы juridical_person [юридическое лицо] */
 CREATE TABLE IF NOT EXISTS juridical_person (
-    id INT PRIMARY KEY,    # id устанавливается вручную, в зависимости от id из таблицы customer
+    id INT PRIMARY KEY,    # id устанавливается запросом, и соответствует макс. значению id из таблицы customer
     juridical_name VARCHAR(512) COMMENT 'Юридическое название',
     inn VARCHAR(15) COMMENT 'ИНН',
-    ogrn_or_egrip VARCHAR(15) COMMENT 'ОГРН/ЕГРИП',
+    ogrn VARCHAR(15) COMMENT 'ОГРН',
+    checking_account VARCHAR(15) COMMENT 'Расчетный счет',
+    bank_name VARCHAR(15) COMMENT 'Название банка',
+    corr_account VARCHAR(15) COMMENT 'Кор. счет',
+    bik VARCHAR(15) COMMENT 'БИК',
     contact_person TINYTEXT COMMENT 'Контактное лицо'
 ) COMMENT = 'Юридическое лицо';
 
 /* Создание структуры таблицы information_source [источник информации] */
 CREATE TABLE IF NOT EXISTS information_source (
 	id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(128) COMMENT 'Наименование'
+    source VARCHAR(128) COMMENT 'Источник'
 ) COMMENT = 'Источник информации';
 
 /* Инициализация таблицы information_source [источник информации] */
 INSERT INTO information_source
-	(name)
+	(source)
 VALUES
 	('наружная реклама'),       # id | 1
 	('2ГИС'),                   # id | 2
@@ -81,15 +89,15 @@ VALUES
     ('полиграфия'),             # id | 9
     ('другое');                 # id | 10
     
-/* Создание структуры таблицы furniture_type [тип мебели] */
-CREATE TABLE IF NOT EXISTS furniture_type (
+/* Создание структуры таблицы furniture_species [вид мебели] */
+CREATE TABLE IF NOT EXISTS furniture_species (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(128) COMMENT 'Наименование'
-) COMMENT = 'Тип мебели';
+    species VARCHAR(128) COMMENT 'Вид'
+) COMMENT = 'Вид мебели';
 
-/* Инициализация таблицы furniture_type [тип мебели] */
-INSERT INTO furniture_type
-	(name)
+/* Инициализация таблицы furniture_species [вид мебели] */
+INSERT INTO furniture_species
+	(species)
 VALUES
     ('для дома'),                           # id | 1
     ('для офиса'),                          # id | 2
@@ -97,16 +105,16 @@ VALUES
     ('для образовательных учреждений'),     # id | 4
     ('для учреждений здравоохранения');     # id | 5
 
-/* Создание структуры таблицы furniture_kind [вид мебели] */
-CREATE TABLE IF NOT EXISTS furniture_kind (
+/* Создание структуры таблицы furniture_type [тип мебели] */
+CREATE TABLE IF NOT EXISTS furniture_type (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(128) COMMENT 'Наименование',
-    furniture_type_id INT COMMENT 'Тип мебели'
-) COMMENT = 'Вид мебели';
+    type VARCHAR(128) COMMENT 'Тип',
+    furniture_species_id INT COMMENT 'Вид мебели'
+) COMMENT = 'Тип мебели';
 
-/* Инициализация таблицы furniture_kind [вид мебели] */
-INSERT INTO furniture_kind
-	(name, furniture_type_id)
+/* Инициализация таблицы furniture_type [тип мебели] */
+INSERT INTO furniture_type
+	(type, furniture_species_id)
 VALUES
 	('ванные комнаты', 1),
     ('гардеробные', 1),
@@ -138,11 +146,41 @@ VALUES
     ('мойки', 5),
 	('раздевалки для персонала', 5);
 
-/* Создание внешних ключей таблицы contract [договор] */
-ALTER TABLE contract
-ADD FOREIGN KEY (customer_type_id) REFERENCES customer_type(id),
+/* Создание структуры таблицы order_species [вид заказа] */
+CREATE TABLE IF NOT EXISTS order_species (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    species VARCHAR(12) COMMENT 'Вид'
+) COMMENT = 'Вид заказа';
+
+/* Инициализация таблицы order_species [вид заказа] */
+INSERT INTO order_species
+	(species)
+VALUES
+	('изготовление'),   # id | 1
+    ('продажа'),        # id | 2
+    ('услуга');         # id | 3
+
+/* Создание структуры таблицы order_status [состояние заказа] */
+CREATE TABLE IF NOT EXISTS order_status (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    status VARCHAR(8) COMMENT 'Состояние'
+) COMMENT = 'Состояние заказа';
+
+/* Инициализация таблицы order_status [состояние заказа] */
+INSERT INTO order_status
+	(status)
+VALUES
+	('принят'),     # id | 1
+    ('в работе'),   # id | 2
+    ('сдан');       # id | 3
+
+/* Создание внешних ключей таблицы order [заказ] */
+ALTER TABLE `order`
+ADD FOREIGN KEY (customer_species_id) REFERENCES customer_species(id),
 ADD FOREIGN KEY (customer_id) REFERENCES customer(id),
-ADD FOREIGN KEY (furniture_kind_id) REFERENCES furniture_kind(id)
+ADD FOREIGN KEY (order_species_id) REFERENCES order_species(id),
+ADD FOREIGN KEY (furniture_type_id) REFERENCES furniture_type(id),
+ADD FOREIGN KEY (order_status_id) REFERENCES order_status(id)
 ON UPDATE CASCADE ON DELETE CASCADE;
 
 /* Создание внешних ключей таблицы customer [заказчик] */
@@ -160,7 +198,7 @@ ALTER TABLE juridical_person
 ADD FOREIGN KEY (id) REFERENCES customer(id)
 ON UPDATE CASCADE ON DELETE CASCADE;
 
-/* Создание внешних ключей таблицы furniture_kind [вид мебели] */
-ALTER TABLE furniture_kind
-ADD FOREIGN KEY (furniture_type_id) REFERENCES furniture_type(id)
+/* Создание внешних ключей таблицы furniture_type [вид мебели] */
+ALTER TABLE furniture_type
+ADD FOREIGN KEY (furniture_species_id) REFERENCES furniture_species(id)
 ON UPDATE CASCADE ON DELETE CASCADE;
