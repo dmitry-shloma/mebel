@@ -1,13 +1,13 @@
-#include "addcontractwidget.h"
-#include "ui_addcontractwidget.h"
+#include "addorderwidget.h"
+#include "ui_addorderwidget.h"
 
 #include <QDebug>
 #include <QTreeWidgetItem>
 #include <QCheckBox>
 
-AddContractWidget::AddContractWidget(QDialog *parent) :
+AddOrderWidget::AddOrderWidget(QDialog *parent) :
     QDialog(parent),
-    ui(new Ui::AddContractWidget)
+    ui(new Ui::AddOrderWidget)
 {
     ui->setupUi(this);
     ui->sw->setCurrentIndex(0);
@@ -19,12 +19,12 @@ AddContractWidget::AddContractWidget(QDialog *parent) :
         treeItem->setCheckState(2, Qt::Unchecked);
 }
 
-AddContractWidget::~AddContractWidget()
+AddOrderWidget::~AddOrderWidget()
 {
     delete ui;
 }
 
-void AddContractWidget::on_cbCustomerType_activated(int index)
+void AddOrderWidget::on_cbCustomerType_activated(int index)
 {
     ui->sw->setCurrentIndex(index);
 }

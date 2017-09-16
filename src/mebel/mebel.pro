@@ -8,13 +8,13 @@ TEMPLATE = app
 
 HEADERS  += \
     mainwindow.h \
-    addcontractwidget.h
+    addorderwidget.h
 
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    addcontractwidget.cpp
+    addorderwidget.cpp
 
 FORMS += \
     mainwindow.ui \
-    addcontractwidget.ui
+    addorderwidget.ui

@@ -18,12 +18,12 @@ public:
     ~MainWindow();
 
 private slots:
-    void onAddContractAct();
+    void onAddOrderAct();
     void onPrintAct();
 
 private:
     Ui::MainWindow *ui;
-    QAction *addContractAct_;
+    QAction *addOrderAct_;
     QAction *printAct_;
 };
 

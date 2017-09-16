@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include "addcontractwidget.h"
+#include "addorderwidget.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -9,13 +9,13 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    addContractAct_ = new QAction("add contract", this);
-    connect(addContractAct_, SIGNAL(triggered()), this, SLOT(onAddContractAct()));
+    addOrderAct_ = new QAction("add order", this);
+    connect(addOrderAct_, SIGNAL(triggered()), this, SLOT(onAddOrderAct()));
 
     printAct_ = new QAction("print", this);
-    connect(addContractAct_, SIGNAL(triggered()), this, SLOT(onPrintAct()));
+    connect(addOrderAct_, SIGNAL(triggered()), this, SLOT(onPrintAct()));
 
-    ui->mainToolBar->addAction(addContractAct_);
+    ui->mainToolBar->addAction(addOrderAct_);
     ui->mainToolBar->addAction(printAct_);
 }
 
@@ -24,10 +24,10 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::onAddContractAct()
+void MainWindow::onAddOrderAct()
 {
-    AddContractWidget addContractWidget;
-    addContractWidget.exec();
+    AddOrderWidget addOrderWidget;
+    addOrderWidget.exec();
 }
 
 void MainWindow::onPrintAct()
