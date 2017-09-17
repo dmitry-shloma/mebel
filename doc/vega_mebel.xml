@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?><Db flnm="vega_mebel" nm="mebel" ver="1.3.4">
+  <VerLbl/>
+  <VerNotes/>
+  <DefTblOpts/>
+  <DocFolder>D:\MyProjects\cpp-training.ru\projects\mebel\doc</DocFolder>
+  <Sch Cm="" nm="schemaA">
+    <Tbl UsSo="1" nm="tb_customer">
+      <Cm>Заказчик</Cm>
+      <TblOpts>ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Заказчик'</TblOpts>
+      <Pk ClNs="id" nm="pktb_customer"/>
+      <Cl au="1" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="fullname_or_name" nu="1">
+        <DT arr="0" ds="TinyText" en="" id="710" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>ФИО/Название</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="registration_or_juridical_address" nu="1">
+        <DT arr="0" ds="TinyText" en="" id="710" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Адрес регистрации/Юридический адрес</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="phone" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="11" sc="null" sg="1" un="0"/>
+        <Cm>Телефон</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="email" nu="1">
+        <DT arr="0" ds="TinyText" en="" id="710" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Электронная почта</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="information_source_id" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Источник информации</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="note" nu="1">
+        <DT arr="0" ds="TinyText" en="" id="710" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Примечание</Cm>
+      </Cl>
+      <Fk deAc="0" nm="tb_customer_ibfk_1" prLkCl="id" upAc="0">
+        <PrTb mn="0" nm="tb_information_source" oe="1" sch="schemaA" zr="1"/>
+        <CdTb mn="1" nm="tb_customer" oe="0" sch="schemaA" zr="1"/>
+        <ClPr cdCl="information_source_id" prCl="id"/>
+      </Fk>
+      <Idx clu="0" ftx="0" nm="information_source_id" spa="0" unq="0">
+        <ClNs>information_source_id</ClNs>
+        <OptTx>USES BTREE</OptTx>
+      </Idx>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="tb_customer_species">
+      <Cm>Вид заказчика</Cm>
+      <TblOpts>ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='Вид заказчика'</TblOpts>
+      <Pk ClNs="id" nm="pktb_customer_species"/>
+      <Cl au="1" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="species" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="9" sc="null" sg="1" un="0"/>
+        <Cm>Вид</Cm>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="tb_furniture_species">
+      <Cm>Вид мебели</Cm>
+      <TblOpts>ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='Вид мебели'</TblOpts>
+      <Pk ClNs="id" nm="pktb_furniture_species"/>
+      <Cl au="1" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="species" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="128" sc="null" sg="1" un="0"/>
+        <Cm>Вид</Cm>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="tb_furniture_type">
+      <Cm>Тип мебели</Cm>
+      <TblOpts>ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8 COMMENT='Тип мебели'</TblOpts>
+      <Pk ClNs="id" nm="pktb_furniture_type"/>
+      <Cl au="1" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="type" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="128" sc="null" sg="1" un="0"/>
+        <Cm>Тип</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="furniture_species_id" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Вид мебели</Cm>
+      </Cl>
+      <Fk deAc="0" nm="tb_furniture_type_ibfk_1" prLkCl="id" upAc="0">
+        <PrTb mn="0" nm="tb_furniture_species" oe="1" sch="schemaA" zr="1"/>
+        <CdTb mn="1" nm="tb_furniture_type" oe="0" sch="schemaA" zr="1"/>
+        <ClPr cdCl="furniture_species_id" prCl="id"/>
+      </Fk>
+      <Idx clu="0" ftx="0" nm="furniture_species_id" spa="0" unq="0">
+        <ClNs>furniture_species_id</ClNs>
+        <OptTx>USES BTREE</OptTx>
+      </Idx>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="tb_information_source">
+      <Cm>Источник информации</Cm>
+      <TblOpts>ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='Источник информации'</TblOpts>
+      <Pk ClNs="id" nm="pktb_information_source"/>
+      <Cl au="1" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="source" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="128" sc="null" sg="1" un="0"/>
+        <Cm>Источник</Cm>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="tb_juridical_person">
+      <Cm>Юридическое лицо</Cm>
+      <TblOpts>ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Юридическое лицо'</TblOpts>
+      <Pk ClNs="id" nm="pktb_juridical_person"/>
+      <Cl au="0" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="juridical_name" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="512" sc="null" sg="1" un="0"/>
+        <Cm>Юридическое название</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="inn" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="15" sc="null" sg="1" un="0"/>
+        <Cm>ИНН</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="ogrn" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="15" sc="null" sg="1" un="0"/>
+        <Cm>ОГРН</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="checking_account" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="15" sc="null" sg="1" un="0"/>
+        <Cm>Расчетный счет</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="bank_name" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="15" sc="null" sg="1" un="0"/>
+        <Cm>Название банка</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="corr_account" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="15" sc="null" sg="1" un="0"/>
+        <Cm>Кор. счет</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="bik" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="15" sc="null" sg="1" un="0"/>
+        <Cm>БИК</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="contact_person" nu="1">
+        <DT arr="0" ds="TinyText" en="" id="710" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Контактное лицо</Cm>
+      </Cl>
+      <Fk deAc="0" nm="tb_juridical_person_ibfk_1" prLkCl="id" upAc="0">
+        <PrTb mn="0" nm="tb_customer" oe="1" sch="schemaA" zr="0"/>
+        <CdTb mn="1" nm="tb_juridical_person" oe="0" sch="schemaA" zr="1"/>
+        <ClPr cdCl="id" prCl="id"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="tb_natural_person">
+      <Cm>Физическое лицо</Cm>
+      <TblOpts>ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Физическое лицо'</TblOpts>
+      <Pk ClNs="id" nm="pktb_natural_person"/>
+      <Cl au="0" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="birth_date" nu="1">
+        <DT arr="0" ds="Date" en="" id="91" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Дата рождения</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="ppt_series_and_number" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="15" sc="null" sg="1" un="0"/>
+        <Cm>Серия и номер паспорта</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="ppt_issued_by" nu="1">
+        <DT arr="0" ds="TinyText" en="" id="710" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Кем выдан</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="ppt_issue_date" nu="1">
+        <DT arr="0" ds="Date" en="" id="91" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Дата выдачи</Cm>
+      </Cl>
+      <Fk deAc="0" nm="tb_natural_person_ibfk_1" prLkCl="id" upAc="0">
+        <PrTb mn="0" nm="tb_customer" oe="1" sch="schemaA" zr="0"/>
+        <CdTb mn="1" nm="tb_natural_person" oe="0" sch="schemaA" zr="1"/>
+        <ClPr cdCl="id" prCl="id"/>
+      </Fk>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="tb_order">
+      <Cm>Заказы</Cm>
+      <TblOpts>ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='Заказы'</TblOpts>
+      <Pk ClNs="id" nm="pktb_order"/>
+      <Cl au="1" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="contract_number" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="20" sc="null" sg="1" un="0"/>
+        <Cm>Номер договора</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="contract_date" nu="1">
+        <DT arr="0" ds="Date" en="" id="91" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Дата договора</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="customer_species_id" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Вид заказчика</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="customer_id" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Заказчик</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="order_species_id" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Вид заказа</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="furniture_type_id" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Тип мебели</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="installation_date" nu="1">
+        <DT arr="0" ds="Date" en="" id="91" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Дата монтажа</Cm>
+      </Cl>
+      <Cl au="0" df="0" nm="is_exw" nu="1">
+        <DT arr="0" ds="TinyInt" en="" id="-6" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Самовывоз</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="installation_address" nu="1">
+        <DT arr="0" ds="TinyText" en="" id="710" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Адрес монтажа</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="price" nu="1">
+        <DT arr="0" ds="Decimal" en="" id="3" ln="7" sc="2" sg="1" un="0"/>
+        <Cm>Цена</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="initial_payment" nu="1">
+        <DT arr="0" ds="Decimal" en="" id="3" ln="7" sc="2" sg="1" un="0"/>
+        <Cm>Первый взнос</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="balance" nu="1">
+        <DT arr="0" ds="Decimal" en="" id="3" ln="7" sc="2" sg="1" un="0"/>
+        <Cm>Остаток</Cm>
+      </Cl>
+      <Cl au="0" df="1" nm="order_state_id" nu="1">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Состояние заказа</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="order_state_change_history" nu="1">
+        <DT arr="0" ds="Text" en="" id="703" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>История изменения состояния заказа</Cm>
+      </Cl>
+      <Cl au="0" df="" nm="note" nu="1">
+        <DT arr="0" ds="TinyText" en="" id="710" ln="null" sc="null" sg="1" un="0"/>
+        <Cm>Примечание</Cm>
+      </Cl>
+      <Fk deAc="3" nm="tb_order_ibfk_1" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="tb_customer_species" oe="1" sch="schemaA" zr="1"/>
+        <CdTb mn="1" nm="tb_order" oe="0" sch="schemaA" zr="1"/>
+        <ClPr cdCl="customer_species_id" prCl="id"/>
+      </Fk>
+      <Fk deAc="3" nm="tb_order_ibfk_2" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="tb_customer" oe="1" sch="schemaA" zr="1"/>
+        <CdTb mn="1" nm="tb_order" oe="0" sch="schemaA" zr="1"/>
+        <ClPr cdCl="customer_id" prCl="id"/>
+      </Fk>
+      <Fk deAc="3" nm="tb_order_ibfk_3" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="tb_order_species" oe="1" sch="schemaA" zr="1"/>
+        <CdTb mn="1" nm="tb_order" oe="0" sch="schemaA" zr="1"/>
+        <ClPr cdCl="order_species_id" prCl="id"/>
+      </Fk>
+      <Fk deAc="3" nm="tb_order_ibfk_4" prLkCl="id" upAc="3">
+        <PrTb mn="0" nm="tb_furniture_type" oe="1" sch="schemaA" zr="1"/>
+        <CdTb mn="1" nm="tb_order" oe="0" sch="schemaA" zr="1"/>
+        <ClPr cdCl="furniture_type_id" prCl="id"/>
+      </Fk>
+      <Fk deAc="0" nm="tb_order_ibfk_5" prLkCl="id" upAc="0">
+        <PrTb mn="0" nm="tb_order_state" oe="1" sch="schemaA" zr="1"/>
+        <CdTb mn="1" nm="tb_order" oe="0" sch="schemaA" zr="1"/>
+        <ClPr cdCl="order_state_id" prCl="id"/>
+      </Fk>
+      <Idx clu="0" ftx="0" nm="customer_id" spa="0" unq="0">
+        <ClNs>customer_id</ClNs>
+        <OptTx>USES BTREE</OptTx>
+      </Idx>
+      <Idx clu="0" ftx="0" nm="customer_species_id" spa="0" unq="0">
+        <ClNs>customer_species_id</ClNs>
+        <OptTx>USES BTREE</OptTx>
+      </Idx>
+      <Idx clu="0" ftx="0" nm="furniture_type_id" spa="0" unq="0">
+        <ClNs>furniture_type_id</ClNs>
+        <OptTx>USES BTREE</OptTx>
+      </Idx>
+      <Idx clu="0" ftx="0" nm="order_species_id" spa="0" unq="0">
+        <ClNs>order_species_id</ClNs>
+        <OptTx>USES BTREE</OptTx>
+      </Idx>
+      <Idx clu="0" ftx="0" nm="order_state_id" spa="0" unq="0">
+        <ClNs>order_state_id</ClNs>
+        <OptTx>USES BTREE</OptTx>
+      </Idx>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="tb_order_species">
+      <Cm>Вид заказа</Cm>
+      <TblOpts>ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Вид заказа'</TblOpts>
+      <Pk ClNs="id" nm="pktb_order_species"/>
+      <Cl au="1" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="species" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="12" sc="null" sg="1" un="0"/>
+        <Cm>Вид</Cm>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <Tbl UsSo="1" nm="tb_order_state">
+      <Cm>Состояние заказа</Cm>
+      <TblOpts>ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='Состояние заказа'</TblOpts>
+      <Pk ClNs="id" nm="pktb_order_state"/>
+      <Cl au="1" df="" nm="id" nu="0">
+        <DT arr="0" ds="Integer" en="" id="4" ln="null" sc="null" sg="1" un="0"/>
+      </Cl>
+      <Cl au="0" df="" nm="state" nu="1">
+        <DT arr="0" ds="VarChar" en="" id="12" ln="8" sc="null" sg="1" un="0"/>
+        <Cm>Состояние</Cm>
+      </Cl>
+      <UniqueConstraints/>
+      <SchTrHis/>
+    </Tbl>
+    <CustomTypes/>
+  </Sch>
+  <Dgm nm="diagramA">
+    <RnCf ClkAct="false" FtSz="11" lkStgy="KeyToKeyStrategy" zm="1.0">
+      <VbCfg>
+        <Fg ky="Auto Number" vl="0"/>
+        <Fg ky="Check" vl="0"/>
+        <Fg ky="Comment" vl="0"/>
+        <Fg ky="Data Type" vl="1"/>
+        <Fg ky="Default" vl="0"/>
+        <Fg ky="ENUM Values" vl="0"/>
+        <Fg ky="Length" vl="1"/>
+        <Fg ky="Name" vl="1"/>
+        <Fg ky="Nullable" vl="0"/>
+        <Fg ky="Schema Name" vl="0"/>
+        <Fg ky="Signed" vl="0"/>
+      </VbCfg>
+    </RnCf>
+    <DiaProps>
+      <Show AllCols="1" FkCols="1" FkNms="0" PkCols="1"/>
+      <ErNotation>BarkerErNotation</ErNotation>
+      <DbTableRectangleFill>HeaderFooterFill</DbTableRectangleFill>
+      <svg path=""/>
+    </DiaProps>
+    <TbGl bkCl="ff6666ff" sch="schemaA" tbl="tb_customer" x="596" y="21"/>
+    <TbGl bkCl="ff6666ff" sch="schemaA" tbl="tb_customer_species" x="459" y="179"/>
+    <TbGl bkCl="ff6666ff" sch="schemaA" tbl="tb_furniture_species" x="99" y="423"/>
+    <TbGl bkCl="ff6666ff" sch="schemaA" tbl="tb_furniture_type" x="62" y="307"/>
+    <TbGl bkCl="ff6666ff" sch="schemaA" tbl="tb_information_source" x="1166" y="59"/>
+    <TbGl bkCl="ff6666ff" sch="schemaA" tbl="tb_juridical_person" x="1073" y="206"/>
+    <TbGl bkCl="ff6666ff" sch="schemaA" tbl="tb_natural_person" x="673" y="270"/>
+    <TbGl bkCl="ff6666ff" sch="schemaA" tbl="tb_order" x="29" y="32"/>
+    <TbGl bkCl="ff6666ff" sch="schemaA" tbl="tb_order_species" x="435" y="364"/>
+    <TbGl bkCl="ff6666ff" sch="schemaA" tbl="tb_order_state" x="409" y="456"/>
+    <FkGl bkCl="ff000000" childEdge="" nm="schemaA.tb_customer.tb_customer_ibfk_1" parentEdge="" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="" nm="schemaA.tb_furniture_type.tb_furniture_type_ibfk_1" parentEdge="" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="" nm="schemaA.tb_juridical_person.tb_juridical_person_ibfk_1" parentEdge="" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="" nm="schemaA.tb_natural_person.tb_natural_person_ibfk_1" parentEdge="" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="" nm="schemaA.tb_order.tb_order_ibfk_1" parentEdge="" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="" nm="schemaA.tb_order.tb_order_ibfk_2" parentEdge="" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="" nm="schemaA.tb_order.tb_order_ibfk_3" parentEdge="" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="" nm="schemaA.tb_order.tb_order_ibfk_4" parentEdge="" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <FkGl bkCl="ff000000" childEdge="" nm="schemaA.tb_order.tb_order_ibfk_5" parentEdge="" positioner="">
+      <positionableLines/>
+    </FkGl>
+    <Notes/>
+    <Zones/>
+  </Dgm>
+  <RnmMgr NxRnmId="1"/>
+  <DbDocOptionMgr>
+    <BasicOptionMgr>
+      <Name>db.doc.option.mgr</Name>
+      <BoolOpt lbl="Diagrams" nm="doc.diagrams" on="1" spl="0"/>
+      <BoolOpt lbl="Foreign Keys" nm="doc.fks" on="1" spl="0"/>
+      <BoolOpt lbl="Indexes" nm="doc.indexes" on="1" spl="0"/>
+      <BoolOpt lbl="Overwrite CSS File" nm="doc.overwrite.css" on="1" spl="0"/>
+      <BoolOpt lbl="Procedures" nm="doc.procs" on="1" spl="0"/>
+      <BoolOpt lbl="Schemas" nm="doc.schemas" on="1" spl="0"/>
+      <BoolOpt lbl="Sequences" nm="doc.sequences" on="1" spl="0"/>
+      <BoolOpt lbl="Tables" nm="doc.tables" on="1" spl="0"/>
+      <BoolOpt lbl="Triggers" nm="doc.triggers" on="1" spl="0"/>
+      <BoolOpt lbl="Views" nm="doc.views" on="1" spl="0"/>
+    </BasicOptionMgr>
+  </DbDocOptionMgr>
+  <OpenEditors>
+    <OpenEditor ClsNm="Diagram" fqn="null.diagramA" selected="1"/>
+  </OpenEditors>
+  <TreePaths>
+    <TreePath/>
+  </TreePaths>
+  <SqlTexts/>
+</Db>

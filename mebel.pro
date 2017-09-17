@@ -5,8 +5,6 @@ is_project_configured(): init_qmake_cache()
 
 TEMPLATE = subdirs
 
-CONFIG += ordered
-
 SUBDIRS = \
     src
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>AddOrderWidget</class>
- <widget class="QWidget" name="AddOrderWidget">
+ <class>OrderWidget</class>
+ <widget class="QWidget" name="OrderWidget">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -9,6 +9,9 @@
     <width>1184</width>
     <height>781</height>
    </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ВегаМебель</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_14">
    <item>
@@ -26,7 +29,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Добавление заказа</string>
+        <string>%0 заказа</string>
        </property>
       </widget>
      </item>
@@ -94,7 +97,7 @@
         </font>
        </property>
        <property name="text">
-        <string>ЮЛ-01/2017</string>
+        <string/>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -210,7 +213,7 @@
      <item>
       <widget class="QStackedWidget" name="sw">
        <property name="currentIndex">
-        <number>1</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="pageNaturalPerson">
         <layout class="QHBoxLayout" name="horizontalLayout_42">
@@ -240,7 +243,7 @@
                 </font>
                </property>
                <property name="text">
-                <string>Курбангалиева-Падалка Динара Кузьминична</string>
+                <string/>
                </property>
                <property name="cursorPosition">
                 <number>0</number>
@@ -337,7 +340,7 @@
                   </font>
                  </property>
                  <property name="text">
-                  <string>5204 975552</string>
+                  <string/>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -394,7 +397,7 @@
                   <enum>Qt::ScrollBarAlwaysOn</enum>
                  </property>
                  <property name="plainText">
-                  <string>Миграционный пункт в городском округе Долгопрудный межрайонного ОУФМС России по Московской обл. в городском поселении Мытищи</string>
+                  <string/>
                  </property>
                 </widget>
                </item>
@@ -497,7 +500,7 @@
                 <enum>Qt::ScrollBarAlwaysOn</enum>
                </property>
                <property name="plainText">
-                <string>644041, Россия, г. Омск, 2-й Северо-Восточный переулок, д. 16, кв. 299</string>
+                <string/>
                </property>
               </widget>
              </item>
@@ -548,7 +551,7 @@
                 </font>
                </property>
                <property name="text">
-                <string>Курбангалиева-Падалка Динара Кузьминична</string>
+                <string/>
                </property>
                <property name="cursorPosition">
                 <number>0</number>
@@ -607,7 +610,7 @@
                 <enum>Qt::ScrollBarAlwaysOn</enum>
                </property>
                <property name="plainText">
-                <string>Миграционный пункт в городском округе Долгопрудный межрайонного ОУФМС России по Московской обл. в городском поселении Мытищи</string>
+                <string/>
                </property>
               </widget>
              </item>
@@ -637,7 +640,7 @@
                 </font>
                </property>
                <property name="text">
-                <string>Курбангалиева-Падалка Динара Кузьминична</string>
+                <string/>
                </property>
                <property name="cursorPosition">
                 <number>0</number>
@@ -670,7 +673,7 @@
                 </font>
                </property>
                <property name="text">
-                <string>Курбангалиева-Падалка Динара Кузьминична</string>
+                <string/>
                </property>
                <property name="cursorPosition">
                 <number>0</number>
@@ -729,7 +732,7 @@
                 <enum>Qt::ScrollBarAlwaysOn</enum>
                </property>
                <property name="plainText">
-                <string>644041, Россия, г. Омск, 2-й Северо-Восточный переулок, д. 16, кв. 299</string>
+                <string/>
                </property>
               </widget>
              </item>
@@ -797,7 +800,7 @@
                   </font>
                  </property>
                  <property name="text">
-                  <string>Курбангалиева-Падалка Динара Кузьминична</string>
+                  <string/>
                  </property>
                  <property name="cursorPosition">
                   <number>0</number>
@@ -854,7 +857,7 @@
                   <enum>Qt::ScrollBarAlwaysOn</enum>
                  </property>
                  <property name="plainText">
-                  <string>644041, Россия, г. Омск, 2-й Северо-Восточный переулок, д. 16, кв. 299</string>
+                  <string/>
                  </property>
                 </widget>
                </item>
@@ -882,7 +885,7 @@
                   </font>
                  </property>
                  <property name="text">
-                  <string>Курбангалиева-Падалка Динара Кузьминична</string>
+                  <string/>
                  </property>
                  <property name="cursorPosition">
                   <number>0</number>
@@ -913,7 +916,7 @@
                   </font>
                  </property>
                  <property name="text">
-                  <string>Курбангалиева-Падалка Динара Кузьминична</string>
+                  <string/>
                  </property>
                  <property name="cursorPosition">
                   <number>0</number>
@@ -1054,7 +1057,7 @@
             </font>
            </property>
            <property name="text">
-            <string>+7-904-322-37-92</string>
+            <string/>
            </property>
           </widget>
          </item>
@@ -1084,7 +1087,7 @@
             </font>
            </property>
            <property name="text">
-            <string>dmitry.shloma@mail.ru</string>
+            <string/>
            </property>
           </widget>
          </item>
