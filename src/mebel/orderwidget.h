@@ -19,8 +19,11 @@ public:
 private slots:
     void on_cbCustomerType_activated(int index);
 
+    void on_pbAction_clicked();
+
 private:
     Ui::OrderWidget *ui;
+    OrderMode mode_;
 };
 
 #endif // ORDERWIDGET_H

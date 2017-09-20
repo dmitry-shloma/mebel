@@ -7,13 +7,13 @@
     <x>0</x>
     <y>0</y>
     <width>1184</width>
-    <height>781</height>
+    <height>916</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>ВегаМебель</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_14">
+  <layout class="QVBoxLayout" name="verticalLayout_13">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_43">
      <property name="leftMargin">
@@ -72,7 +72,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="leNumber">
+      <widget class="QLineEdit" name="leContractNumber">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -120,7 +120,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QDateEdit" name="deConclusionDate">
+      <widget class="QDateEdit" name="deContractDate">
        <property name="font">
         <font>
          <pointsize>13</pointsize>
@@ -166,7 +166,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QComboBox" name="cbCustomerType">
+      <widget class="QComboBox" name="cbCustomerSpecies">
        <property name="minimumSize">
         <size>
          <width>110</width>
@@ -269,7 +269,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QDateEdit" name="deBirthday">
+              <widget class="QDateEdit" name="deBirthDate">
                <property name="font">
                 <font>
                  <pointsize>11</pointsize>
@@ -333,7 +333,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="leFullname_2">
+                <widget class="QLineEdit" name="lePptSeriesAndNumber">
                  <property name="font">
                   <font>
                    <pointsize>11</pointsize>
@@ -387,7 +387,7 @@
                 <number>15</number>
                </property>
                <item>
-                <widget class="QPlainTextEdit" name="plainTextEdit">
+                <widget class="QPlainTextEdit" name="ptPptIssuedBy">
                  <property name="font">
                   <font>
                    <pointsize>11</pointsize>
@@ -418,7 +418,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QDateEdit" name="deBirthday_2">
+                <widget class="QDateEdit" name="dePptIssueDate">
                  <property name="font">
                   <font>
                    <pointsize>11</pointsize>
@@ -490,7 +490,7 @@
               <number>15</number>
              </property>
              <item>
-              <widget class="QPlainTextEdit" name="plainTextEdit_2">
+              <widget class="QPlainTextEdit" name="ptRegistrationAddress">
                <property name="font">
                 <font>
                  <pointsize>11</pointsize>
@@ -544,7 +544,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="leFullname_5">
+              <widget class="QLineEdit" name="leName">
                <property name="font">
                 <font>
                  <pointsize>11</pointsize>
@@ -600,7 +600,7 @@
               <number>15</number>
              </property>
              <item>
-              <widget class="QPlainTextEdit" name="plainTextEdit_7">
+              <widget class="QPlainTextEdit" name="ptJuridicalName">
                <property name="font">
                 <font>
                  <pointsize>11</pointsize>
@@ -633,7 +633,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="leFullname_8">
+              <widget class="QLineEdit" name="leInn">
                <property name="font">
                 <font>
                  <pointsize>11</pointsize>
@@ -666,7 +666,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="leFullname_10">
+              <widget class="QLineEdit" name="leOgrn">
                <property name="font">
                 <font>
                  <pointsize>11</pointsize>
@@ -722,7 +722,7 @@
               <number>15</number>
              </property>
              <item>
-              <widget class="QPlainTextEdit" name="plainTextEdit_6">
+              <widget class="QPlainTextEdit" name="ptJuridicalAddress">
                <property name="font">
                 <font>
                  <pointsize>11</pointsize>
@@ -793,7 +793,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="leFullname_11">
+                <widget class="QLineEdit" name="leCheckingAccount">
                  <property name="font">
                   <font>
                    <pointsize>11</pointsize>
@@ -847,7 +847,7 @@
                 <number>15</number>
                </property>
                <item>
-                <widget class="QPlainTextEdit" name="plainTextEdit_8">
+                <widget class="QPlainTextEdit" name="ptBankName">
                  <property name="font">
                   <font>
                    <pointsize>11</pointsize>
@@ -878,7 +878,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="leFullname_12">
+                <widget class="QLineEdit" name="leCorrAccount">
                  <property name="font">
                   <font>
                    <pointsize>11</pointsize>
@@ -909,7 +909,7 @@
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="leFullname_13">
+                <widget class="QLineEdit" name="leBik">
                  <property name="font">
                   <font>
                    <pointsize>11</pointsize>
@@ -996,7 +996,7 @@
               </widget>
              </item>
              <item>
-              <widget class="QLineEdit" name="leFullname_14">
+              <widget class="QLineEdit" name="leContactPerson">
                <property name="font">
                 <font>
                  <pointsize>11</pointsize>
@@ -1050,7 +1050,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="leFullname_3">
+          <widget class="QLineEdit" name="lePhone">
            <property name="font">
             <font>
              <pointsize>11</pointsize>
@@ -1080,7 +1080,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="leFullname_4">
+          <widget class="QLineEdit" name="leEmail">
            <property name="font">
             <font>
              <pointsize>11</pointsize>
@@ -1110,7 +1110,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QComboBox" name="cbCustomerType_2">
+          <widget class="QComboBox" name="cbInformationSource">
            <property name="minimumSize">
             <size>
              <width>200</width>
@@ -1180,7 +1180,7 @@
           <number>15</number>
          </property>
          <item>
-          <widget class="QPlainTextEdit" name="plainTextEdit_3">
+          <widget class="QPlainTextEdit" name="ptCustomerNote">
            <property name="font">
             <font>
              <pointsize>11</pointsize>
@@ -1201,247 +1201,136 @@
     </layout>
    </item>
    <item>
-    <layout class="QVBoxLayout" name="verticalLayout_13">
+    <layout class="QHBoxLayout" name="horizontalLayout_17" stretch="0,0,2">
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_17" stretch="0,0,2">
-       <item>
-        <widget class="QLabel" name="label_8">
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="text">
-          <string>Вид заказа</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QComboBox" name="cbCustomerType_3">
-         <property name="minimumSize">
-          <size>
-           <width>120</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>120</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-          </font>
-         </property>
-         <property name="currentIndex">
-          <number>0</number>
-         </property>
-         <item>
-          <property name="text">
-           <string>изготовление</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>продажа</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>услуги</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item>
-        <widget class="Line" name="line">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <widget class="QLabel" name="label_8">
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Вид заказа</string>
+       </property>
+      </widget>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_28">
+      <widget class="QComboBox" name="cbOrderSpecies">
+       <property name="minimumSize">
+        <size>
+         <width>120</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>120</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_10">
+        <property name="text">
+         <string>изготовление</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>продажа</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>услуги</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="Line" name="line">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_28">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_10">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_7">
+         <property name="leftMargin">
+          <number>15</number>
+         </property>
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_7">
-           <property name="leftMargin">
-            <number>15</number>
+          <layout class="QHBoxLayout" name="horizontalLayout_18">
+           <property name="spacing">
+            <number>6</number>
            </property>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_18">
-             <property name="spacing">
-              <number>6</number>
+            <widget class="QLabel" name="label_4">
+             <property name="font">
+              <font>
+               <pointsize>11</pointsize>
+              </font>
              </property>
-             <item>
-              <widget class="QLabel" name="label_4">
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>вид мебели</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QComboBox" name="cbCustomerType_4">
-               <property name="minimumSize">
-                <size>
-                 <width>120</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="maximumSize">
-                <size>
-                 <width>120</width>
-                 <height>16777215</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-               <property name="currentIndex">
-                <number>0</number>
-               </property>
-               <item>
-                <property name="text">
-                 <string>для дома</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>для офиса</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>для учреждений здравоохранения</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer_11">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-            </layout>
+             <property name="text">
+              <string>вид мебели</string>
+             </property>
+            </widget>
            </item>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_19">
-             <item>
-              <widget class="QLabel" name="label_5">
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>тип мебели</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer_12">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_20">
-             <property name="spacing">
+            <widget class="QComboBox" name="cbFurnitureSpecies">
+             <property name="minimumSize">
+              <size>
+               <width>120</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>120</width>
+               <height>16777215</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>11</pointsize>
+              </font>
+             </property>
+             <property name="currentIndex">
               <number>0</number>
              </property>
-             <property name="leftMargin">
-              <number>15</number>
-             </property>
              <item>
-              <widget class="QTreeWidget" name="treeWidget">
-               <property name="columnCount">
-                <number>3</number>
-               </property>
-               <attribute name="headerVisible">
-                <bool>false</bool>
-               </attribute>
-               <column>
-                <property name="text">
-                 <string notr="true">1</string>
-                </property>
-               </column>
-               <column>
-                <property name="text">
-                 <string notr="true">2</string>
-                </property>
-               </column>
-               <column>
-                <property name="text">
-                 <string notr="true">3</string>
-                </property>
-               </column>
-              </widget>
+              <property name="text">
+               <string>для дома</string>
+              </property>
              </item>
-            </layout>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_21">
-           <item>
-            <widget class="QLabel" name="label_6">
-             <property name="font">
-              <font>
-               <pointsize>11</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Дата монтажа</string>
-             </property>
+             <item>
+              <property name="text">
+               <string>для офиса</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>для учреждений здравоохранения</string>
+              </property>
+             </item>
             </widget>
            </item>
            <item>
-            <widget class="QDateEdit" name="deBirthday_3">
-             <property name="font">
-              <font>
-               <pointsize>11</pointsize>
-              </font>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="horizontalSpacer_14">
+            <spacer name="horizontalSpacer_11">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
@@ -1456,23 +1345,21 @@
           </layout>
          </item>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_22">
+          <layout class="QHBoxLayout" name="horizontalLayout_19">
            <item>
-            <widget class="QLabel" name="label_11">
+            <widget class="QLabel" name="label_5">
              <property name="font">
               <font>
                <pointsize>11</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
               </font>
              </property>
              <property name="text">
-              <string>Адрес монтажа</string>
+              <string>тип мебели</string>
              </property>
             </widget>
            </item>
            <item>
-            <spacer name="horizontalSpacer_15">
+            <spacer name="horizontalSpacer_12">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
@@ -1484,22 +1371,10 @@
              </property>
             </spacer>
            </item>
-           <item>
-            <widget class="QCheckBox" name="checkBox">
-             <property name="font">
-              <font>
-               <pointsize>11</pointsize>
-              </font>
-             </property>
-             <property name="text">
-              <string>Самовывоз</string>
-             </property>
-            </widget>
-           </item>
           </layout>
          </item>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_23">
+          <layout class="QHBoxLayout" name="horizontalLayout_20">
            <property name="spacing">
             <number>0</number>
            </property>
@@ -1507,7 +1382,7 @@
             <number>15</number>
            </property>
            <item>
-            <widget class="QTreeWidget" name="treeWidget_2">
+            <widget class="QTreeWidget" name="twFurnitureType">
              <property name="columnCount">
               <number>3</number>
              </property>
@@ -1536,25 +1411,160 @@
         </layout>
        </item>
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_8">
+        <layout class="QHBoxLayout" name="horizontalLayout_21">
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_50">
+          <widget class="QLabel" name="label_6">
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Дата монтажа</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDateEdit" name="deInstallationDate">
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_14">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_22">
+         <item>
+          <widget class="QLabel" name="label_11">
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Адрес монтажа</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_15">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="chbIisExw">
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Самовывоз</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_23">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>15</number>
+         </property>
+         <item>
+          <widget class="QPlainTextEdit" name="ptInstallationAddress"/>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_8">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_50">
+         <item>
+          <widget class="QLabel" name="label_21">
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Оплата</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_34">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_12">
+         <property name="leftMargin">
+          <number>15</number>
+         </property>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_34">
            <item>
-            <widget class="QLabel" name="label_21">
+            <widget class="QLabel" name="label_16">
              <property name="font">
               <font>
                <pointsize>11</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
               </font>
              </property>
              <property name="text">
-              <string>Оплата</string>
+              <string>цена, руб.</string>
              </property>
             </widget>
            </item>
            <item>
-            <spacer name="horizontalSpacer_34">
+            <spacer name="horizontalSpacer_37">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
@@ -1566,301 +1576,133 @@
              </property>
             </spacer>
            </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QVBoxLayout" name="verticalLayout_12">
-           <property name="leftMargin">
-            <number>15</number>
-           </property>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_34">
-             <item>
-              <widget class="QLabel" name="label_16">
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>цена, руб.</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer_37">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <widget class="QDoubleSpinBox" name="deBirthday_4">
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-               </property>
-               <property name="prefix">
-                <string/>
-               </property>
-               <property name="suffix">
-                <string/>
-               </property>
-               <property name="decimals">
-                <number>2</number>
-               </property>
-               <property name="maximum">
-                <double>999999.989999999990687</double>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_47">
-             <item>
-              <widget class="QLabel" name="label_18">
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>первый взнос, руб.</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer_38">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <widget class="QDoubleSpinBox" name="deBirthday_5">
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-               </property>
-               <property name="prefix">
-                <string/>
-               </property>
-               <property name="suffix">
-                <string/>
-               </property>
-               <property name="decimals">
-                <number>2</number>
-               </property>
-               <property name="maximum">
-                <double>999999.989999999990687</double>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_48">
-             <item>
-              <widget class="QLabel" name="label_20">
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-               <property name="text">
-                <string>остаток, руб.</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer_39">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <widget class="QDoubleSpinBox" name="deBirthday_6">
-               <property name="font">
-                <font>
-                 <pointsize>11</pointsize>
-                </font>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-               </property>
-               <property name="prefix">
-                <string/>
-               </property>
-               <property name="suffix">
-                <string/>
-               </property>
-               <property name="decimals">
-                <number>2</number>
-               </property>
-               <property name="maximum">
-                <double>999999.989999999990687</double>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_49">
-           <item>
-            <widget class="QLabel" name="label_35">
-             <property name="font">
-              <font>
-               <pointsize>11</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Статус заказа</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QComboBox" name="cbCustomerType_6">
-             <property name="minimumSize">
-              <size>
-               <width>200</width>
-               <height>0</height>
-              </size>
-             </property>
-             <property name="maximumSize">
-              <size>
-               <width>200</width>
-               <height>16777215</height>
-              </size>
-             </property>
+            <widget class="QDoubleSpinBox" name="dePrice">
              <property name="font">
               <font>
                <pointsize>11</pointsize>
               </font>
              </property>
-             <property name="currentIndex">
-              <number>0</number>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
              </property>
-             <item>
-              <property name="text">
-               <string>принят</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>в работе</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>сдан</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item>
-            <spacer name="horizontalSpacer_2">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_53">
-           <item>
-            <widget class="QLabel" name="label_48">
-             <property name="font">
-              <font>
-               <pointsize>11</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-             <property name="text">
-              <string>Примечание</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="horizontalSpacer_32">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_54">
-           <property name="spacing">
-            <number>0</number>
-           </property>
-           <property name="leftMargin">
-            <number>15</number>
-           </property>
-           <item>
-            <widget class="QPlainTextEdit" name="plainTextEdit_4">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="font">
-              <font>
-               <pointsize>11</pointsize>
-              </font>
-             </property>
-             <property name="verticalScrollBarPolicy">
-              <enum>Qt::ScrollBarAlwaysOn</enum>
-             </property>
-             <property name="plainText">
+             <property name="prefix">
               <string/>
+             </property>
+             <property name="suffix">
+              <string/>
+             </property>
+             <property name="decimals">
+              <number>2</number>
+             </property>
+             <property name="maximum">
+              <double>999999.989999999990687</double>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_47">
+           <item>
+            <widget class="QLabel" name="label_18">
+             <property name="font">
+              <font>
+               <pointsize>11</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>первый взнос, руб.</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_38">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QDoubleSpinBox" name="deInitialPayment">
+             <property name="font">
+              <font>
+               <pointsize>11</pointsize>
+              </font>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+             <property name="prefix">
+              <string/>
+             </property>
+             <property name="suffix">
+              <string/>
+             </property>
+             <property name="decimals">
+              <number>2</number>
+             </property>
+             <property name="maximum">
+              <double>999999.989999999990687</double>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_48">
+           <item>
+            <widget class="QLabel" name="label_20">
+             <property name="font">
+              <font>
+               <pointsize>11</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>остаток, руб.</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_39">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QDoubleSpinBox" name="deBalance">
+             <property name="font">
+              <font>
+               <pointsize>11</pointsize>
+              </font>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+             <property name="prefix">
+              <string/>
+             </property>
+             <property name="suffix">
+              <string/>
+             </property>
+             <property name="decimals">
+              <number>2</number>
+             </property>
+             <property name="maximum">
+              <double>999999.989999999990687</double>
              </property>
             </widget>
            </item>
@@ -1868,7 +1710,163 @@
          </item>
         </layout>
        </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_49">
+         <item>
+          <widget class="QLabel" name="label_35">
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Статус заказа</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cbOrderState">
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>200</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="currentIndex">
+            <number>0</number>
+           </property>
+           <item>
+            <property name="text">
+             <string>принят</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>в работе</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>сдан</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_53">
+         <item>
+          <widget class="QLabel" name="label_48">
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string>Примечание</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_32">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_54">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>15</number>
+         </property>
+         <item>
+          <widget class="QPlainTextEdit" name="ptOrderNote">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
+           <property name="verticalScrollBarPolicy">
+            <enum>Qt::ScrollBarAlwaysOn</enum>
+           </property>
+           <property name="plainText">
+            <string/>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
       </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_45">
+     <item>
+      <spacer name="horizontalSpacer_5">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pbAction">
+       <property name="text">
+        <string>%0</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
@@ -1877,6 +1875,8 @@
   <zorder></zorder>
   <zorder></zorder>
   <zorder></zorder>
+  <zorder>pbAction</zorder>
+  <zorder>horizontalSpacer_5</zorder>
  </widget>
  <resources/>
  <connections/>
