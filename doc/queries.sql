@@ -11,10 +11,10 @@ VALUES
     (LAST_INSERT_ID(), '1983-09-28', '5204975552', 'УВД', '2004-04-14');
 
 /* Запись в таблицу tb_juridical_person [юридическое лицо] */
-#INSERT INTO mebel.tb_juridical_person
-#    (id, juridical_name, inn, ogrn, checking_account, bank_name, corr_account, bik, contact_person)
-#VALUES
-#    (LAST_INSERT_ID(), 'ООО ЮГОРИЯ', '123456', '123123123', '123', 'banka', '324', 'fg', 'Васисуалий');
+-- INSERT INTO mebel.tb_juridical_person
+--    (id, juridical_name, inn, ogrn, checking_account, bank_name, corr_account, bik, contact_person)
+-- VALUES
+--    (LAST_INSERT_ID(), 'ООО ЮГОРИЯ', '123456', '123123123', '123', 'banka', '324', 'fg', 'Васисуалий');
 
 /* Запись в таблицу tb_order [заказ] */
 INSERT INTO mebel.tb_order

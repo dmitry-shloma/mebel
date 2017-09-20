@@ -32,8 +32,8 @@ CREATE TABLE IF NOT EXISTS tb_customer_species (
 INSERT INTO tb_customer_species
 	(species)
 VALUES
-	('физ. лицо'),  # id | 1
-    ('юр. лицо');   # id | 2
+    ('физ. лицо'),  -- id | 1
+    ('юр. лицо');   -- id | 2
 
 /* Создание структуры таблицы tb_customer [заказчик] */
 CREATE TABLE IF NOT EXISTS tb_customer (
@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS tb_customer (
 
 /* Создание структуры таблицы tb_natural_person [физическое лицо] */
 CREATE TABLE IF NOT EXISTS tb_natural_person (
-    id INT PRIMARY KEY,    # id устанавливается запросом, и соответствует макс. значению id из таблицы customer
+    id INT PRIMARY KEY,    -- id устанавливается запросом, и соответствует макс. значению id из таблицы customer
     birth_date DATE COMMENT 'Дата рождения',
     ppt_series_and_number VARCHAR(15) COMMENT 'Серия и номер паспорта',
     ppt_issued_by TINYTEXT COMMENT 'Кем выдан',
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS tb_natural_person (
 
 /* Создание структуры таблицы tb_juridical_person [юридическое лицо] */
 CREATE TABLE IF NOT EXISTS tb_juridical_person (
-    id INT PRIMARY KEY,    # id устанавливается запросом, и соответствует макс. значению id из таблицы customer
+    id INT PRIMARY KEY,    -- id устанавливается запросом, и соответствует макс. значению id из таблицы customer
     juridical_name VARCHAR(512) COMMENT 'Юридическое название',
     inn VARCHAR(15) COMMENT 'ИНН',
     ogrn VARCHAR(15) COMMENT 'ОГРН',
@@ -78,16 +78,16 @@ CREATE TABLE IF NOT EXISTS tb_information_source (
 INSERT INTO tb_information_source
 	(source)
 VALUES
-	('наружная реклама'),       # id | 1
-	('2ГИС'),                   # id | 2
-    ('друзья'),                 # id | 3
-	('ВКонтакте'),              # id | 4
-	('Одноклассники'),          # id | 5
-    ('Интернет-поиск'),         # id | 6
-    ('партнерская программа'),  # id | 7
-    ('СМИ'),                    # id | 8
-    ('полиграфия'),             # id | 9
-    ('другое');                 # id | 10
+    ('наружная реклама'),       -- id | 1
+    ('2ГИС'),                   -- id | 2
+    ('друзья'),                 -- id | 3
+    ('ВКонтакте'),              -- id | 4
+    ('Одноклассники'),          -- id | 5
+    ('Интернет-поиск'),         -- id | 6
+    ('партнерская программа'),  -- id | 7
+    ('СМИ'),                    -- id | 8
+    ('полиграфия'),             -- id | 9
+    ('другое');                 -- id | 10
     
 /* Создание структуры таблицы tb_furniture_species [вид мебели] */
 CREATE TABLE IF NOT EXISTS tb_furniture_species (
@@ -99,11 +99,11 @@ CREATE TABLE IF NOT EXISTS tb_furniture_species (
 INSERT INTO tb_furniture_species
 	(species)
 VALUES
-    ('для дома'),                           # id | 1
-    ('для офиса'),                          # id | 2
-    ('для дошкольных учреждений'),          # id | 3
-    ('для образовательных учреждений'),     # id | 4
-    ('для учреждений здравоохранения');     # id | 5
+    ('для дома'),                           -- id | 1
+    ('для офиса'),                          -- id | 2
+    ('для дошкольных учреждений'),          -- id | 3
+    ('для образовательных учреждений'),     -- id | 4
+    ('для учреждений здравоохранения');     -- id | 5
 
 /* Создание структуры таблицы tb_furniture_type [тип мебели] */
 CREATE TABLE IF NOT EXISTS tb_furniture_type (
@@ -116,7 +116,7 @@ CREATE TABLE IF NOT EXISTS tb_furniture_type (
 INSERT INTO tb_furniture_type
 	(type, furniture_species_id)
 VALUES
-	('ванные комнаты', 1),
+    ('ванные комнаты', 1),
     ('гардеробные', 1),
     ('гостиные', 1),
     ('детские комнаты', 1),
@@ -131,8 +131,8 @@ VALUES
     ('спальни', 1),
     ('шкафы', 1),
     ('шкафы-купе', 1),
-	('письменные столы', 2),
-	('ресепшны', 2),
+    ('письменные столы', 2),
+    ('ресепшны', 2),
     ('стеллажи для документов', 2),
     ('тумбы', 2),
     ('мебель для игровой комнаты', 3),
@@ -142,9 +142,9 @@ VALUES
     ('трибуны', 4),
     ('мебель для кафедры', 4),
     ('медицинские кресла', 5), 
-	('медицинские посты', 5),
+    ('медицинские посты', 5),
     ('мойки', 5),
-	('раздевалки для персонала', 5);
+    ('раздевалки для персонала', 5);
 
 /* Создание структуры таблицы tb_order_species [вид заказа] */
 CREATE TABLE IF NOT EXISTS tb_order_species (
@@ -156,9 +156,9 @@ CREATE TABLE IF NOT EXISTS tb_order_species (
 INSERT INTO tb_order_species
 	(species)
 VALUES
-	('изготовление'),   # id | 1
-    ('продажа'),        # id | 2
-    ('услуга');         # id | 3
+    ('изготовление'),   -- id | 1
+    ('продажа'),        -- id | 2
+    ('услуга');         -- id | 3
 
 /* Создание структуры таблицы tb_order_state [состояние заказа] */
 CREATE TABLE IF NOT EXISTS tb_order_state(
@@ -170,9 +170,9 @@ CREATE TABLE IF NOT EXISTS tb_order_state(
 INSERT INTO tb_order_state
 	(state)
 VALUES
-	('принят'),     # id | 1
-    ('в работе'),   # id | 2
-    ('сдан');       # id | 3
+    ('принят'),     -- id | 1
+    ('в работе'),   -- id | 2
+    ('сдан');       -- id | 3
 
 /* Создание внешних ключей таблицы tb_order [заказ] */
 ALTER TABLE tb_order
