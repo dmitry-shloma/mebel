@@ -18,8 +18,10 @@ public:
 
     QStringList select(const QString &tableName,
                        const QString &filter = QString());
-    void insert(const QString &tableName, const QStringList &columns,
+    quint32 insert(const QString &tableName, const QStringList &columns,
                          const QStringList &values);
+//    void update();
+//    void delete();
 
 private:
     QSqlDatabase db_;
