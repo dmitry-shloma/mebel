@@ -1,26 +1,18 @@
 include(python_helper.pri)
 include(qmake_helper.pri)
 
-# @brief is_project_configured проверка, сконфигурирован ли проект
-# @desc вызывается ТОЛЬКО из главного pro-файла проекта
-# @return true - сконфигурирован, false - нет
-# то сообщение об ошибке
-defineTest(is_project_configured) {
-    OUT_PWD_ = $$OUT_PWD
-    !isEmpty(OUT_PWD_): return (true) # если проект сконфигурирован
-    return (false)
-}
+win32: error(qmake: windows platform not supported in this \
+    module \'$$basename(_FILE_)\')
+
+!is_python_versions_installed(2.4.3, 2.7.9): \
+    error(qmake: python version is not supported)
+
+# TODO: заменить $$1 и аналогичные на имена, как в qmake_helper.pri и др.
 
 # @brief parse_project_name выделяет имя проекта и возвращает в формате макроса,
-# т. е. в верхнем регистре и "-" (если есть) заменено на "_"
+# т. е. в верхнем регистре и "-" (если есть) заменяет на "_"
 # @param $$1 имя главного pro-файла проекта
 defineReplace(parse_project_name) {
-    win32: error(qmake: windows platform not supported in the \
-        function \'parse_project_name()\')
-
-    !is_python_versions_installed(2.4.3, 2.7.9): \
-        error(qmake: unsupported python version)
-
     USE_PROJECTINFO_PY = false
 
     USE_PROJECTINFO_PY {
@@ -52,12 +44,6 @@ defineReplace(parse_project_name) {
 # @return в зависимости от $$2, если $$2 не задано или не существует,
 # то сообщение об ошибке
 defineReplace(parse_project_version) {
-    win32: error(qmake: windows platform not supported in the \
-        function \'parse_project_version()\')
-
-    !is_python_versions_installed(2.4.3, 2.7.9): \
-        error(qmake: unsupported python version)
-
     # TODO: Eсли $$2 не задано, то сообщение об ошибке
 
     USE_PROJECTINFO_PY = false
@@ -97,12 +83,6 @@ defineReplace(parse_project_version) {
 # @return в зависимости от $$2, если $$2 не задано или не существует,
 # то сообщение об ошибке
 defineReplace(parse_project_build_info) {
-    win32: error(qmake: windows platform not supported in the \
-        function \'parse_project_build_info()\')
-
-    !is_python_versions_installed(2.4.3, 2.7.9): \
-        error(qmake: unsupported python version)
-
     # TODO: $$2 если пусто то error
 
     USE_PROJECTINFO_PY = false
@@ -134,12 +114,6 @@ defineReplace(parse_project_build_info) {
 # @param PROJECT_BUILD_INFO информация о сборке проекта, в формате:
 # BUILD_DATETIME.BUILD_NUMBER~DESC
 defineTest(write_project_info) {
-    win32: error(qmake: windows platform not supported in the \
-        function \'write_project_info()\')
-
-    !is_python_versions_installed(2.4.3, 2.7.9): \
-        error(qmake: unsupported python version)
-
     PROJECT_NAME = $$1
     PROJECT_VERSION = $$2
     PROJECT_BUILD_INFO = $$3
@@ -155,6 +129,8 @@ defineTest(write_project_info) {
             $$parse_project_version($$PROJECT_VERSION, MINOR))
         write_key_value(PROJECT_PATCH_VERSION, \
             $$parse_project_version($$PROJECT_VERSION, PATCH))
+
+        # т.к. $$PROJECT_BUILD_NUMBER используется в $$VERSION и в $$BUILD_INFO
         !infile($$PROJECT_BUILD_DIR/.qmake.cache, PROJECT_BUILD_NUMBER) {
             write_key_value(PROJECT_BUILD_NUMBER, \
                 $$parse_project_version($$PROJECT_VERSION, BUILD))
