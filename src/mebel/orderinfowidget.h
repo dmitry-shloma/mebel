@@ -15,11 +15,7 @@ public:
     explicit OrderInfoWidget(QWidget *parent = 0);
     ~OrderInfoWidget();
 
-private slots:
-    void onUpdateTableWidgetItemData(const QStringList &data);
-
-signals:
-    void updateTableWidgetItemData(const QStringList &data);
+    void onUpdateTableWidgetItemData();
 
 private:
     Ui::OrderInfoWidget *ui;

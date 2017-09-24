@@ -1,4 +1,6 @@
-include(../environment.pri)
+include(../qmake_helper.pri)
+
+is_project_configured(): include(../environment.pri)
 
 QT += core gui sql
 
@@ -11,6 +13,7 @@ HEADERS  += \
     orderwidget.h \
     customerinfowidget.h \
     orderinfowidget.h \
+    settings.h \
     sqldatabasehelper.h
 
 SOURCES += \
@@ -18,8 +21,7 @@ SOURCES += \
     mainwindow.cpp \
     orderwidget.cpp \
     customerinfowidget.cpp \
-    orderinfowidget.cpp \
-    sqldatabasehelper.cpp
+    orderinfowidget.cpp
 
 FORMS += \
     mainwindow.ui \

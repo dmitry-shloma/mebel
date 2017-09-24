@@ -14,11 +14,9 @@ defineTest(is_project_configured) {
 
 # @brief init_qmake_cache инициализация (пересоздание) файла .qmake.cache
 # @desc вызывается ОДИН РАЗ и ТОЛЬКО из главного pro-файла проекта
-# param PROJECT_DIR директория проекта
-# param PROJECT_BUILD_DIR директория сборки проекта
 defineTest(init_qmake_cache) {
-    PROJECT_DIR = $$1
-    PROJECT_BUILD_DIR = $$2
+    PROJECT_DIR = $$PWD             # директория проекта
+    PROJECT_BUILD_DIR = $$OUT_PWD   # директория сборки проекта
 
     # проброс значения PROJECT_BUILD_DIR в функцию write_key_value(key, value),
     # т.к. при ее первом вызове, файл .qmake.cache еще не создан и значение

@@ -126,6 +126,9 @@
          <pointsize>13</pointsize>
         </font>
        </property>
+       <property name="calendarPopup">
+        <bool>false</bool>
+       </property>
       </widget>
      </item>
      <item>
@@ -185,18 +188,8 @@
         </font>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>-1</number>
        </property>
-       <item>
-        <property name="text">
-         <string>Физ. лицо</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>Юр. лицо</string>
-        </property>
-       </item>
       </widget>
      </item>
      <item>
@@ -211,7 +204,7 @@
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_44">
      <item>
-      <widget class="QStackedWidget" name="sw">
+      <widget class="QStackedWidget" name="swPerson">
        <property name="currentIndex">
         <number>0</number>
        </property>
@@ -1129,13 +1122,8 @@
             </font>
            </property>
            <property name="currentIndex">
-            <number>0</number>
+            <number>-1</number>
            </property>
-           <item>
-            <property name="text">
-             <string>партнерская программа</string>
-            </property>
-           </item>
           </widget>
          </item>
         </layout>
@@ -1236,23 +1224,8 @@
         </font>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>-1</number>
        </property>
-       <item>
-        <property name="text">
-         <string>изготовление</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>продажа</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>услуги</string>
-        </property>
-       </item>
       </widget>
      </item>
      <item>
@@ -1294,13 +1267,13 @@
             <widget class="QComboBox" name="cbFurnitureSpecies">
              <property name="minimumSize">
               <size>
-               <width>120</width>
+               <width>300</width>
                <height>0</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>120</width>
+               <width>300</width>
                <height>16777215</height>
               </size>
              </property>
@@ -1310,23 +1283,8 @@
               </font>
              </property>
              <property name="currentIndex">
-              <number>0</number>
+              <number>-1</number>
              </property>
-             <item>
-              <property name="text">
-               <string>для дома</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>для офиса</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>для учреждений здравоохранения</string>
-              </property>
-             </item>
             </widget>
            </item>
            <item>
@@ -1383,8 +1341,11 @@
            </property>
            <item>
             <widget class="QTreeWidget" name="twFurnitureType">
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
              <property name="columnCount">
-              <number>3</number>
+              <number>1</number>
              </property>
              <attribute name="headerVisible">
               <bool>false</bool>
@@ -1392,16 +1353,6 @@
              <column>
               <property name="text">
                <string notr="true">1</string>
-              </property>
-             </column>
-             <column>
-              <property name="text">
-               <string notr="true">2</string>
-              </property>
-             </column>
-             <column>
-              <property name="text">
-               <string notr="true">3</string>
               </property>
              </column>
             </widget>
@@ -1435,6 +1386,9 @@
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+           <property name="calendarPopup">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
@@ -1577,7 +1531,7 @@
             </spacer>
            </item>
            <item>
-            <widget class="QDoubleSpinBox" name="dePrice">
+            <widget class="QDoubleSpinBox" name="dsbPrice">
              <property name="font">
               <font>
                <pointsize>11</pointsize>
@@ -1630,7 +1584,7 @@
             </spacer>
            </item>
            <item>
-            <widget class="QDoubleSpinBox" name="deInitialPayment">
+            <widget class="QDoubleSpinBox" name="dsbInitialPayment">
              <property name="font">
               <font>
                <pointsize>11</pointsize>
@@ -1683,7 +1637,7 @@
             </spacer>
            </item>
            <item>
-            <widget class="QDoubleSpinBox" name="deBalance">
+            <widget class="QDoubleSpinBox" name="dsbBalance">
              <property name="font">
               <font>
                <pointsize>11</pointsize>
@@ -1746,23 +1700,8 @@
             </font>
            </property>
            <property name="currentIndex">
-            <number>0</number>
+            <number>-1</number>
            </property>
-           <item>
-            <property name="text">
-             <string>принят</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>в работе</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>сдан</string>
-            </property>
-           </item>
           </widget>
          </item>
          <item>
@@ -1875,8 +1814,6 @@
   <zorder></zorder>
   <zorder></zorder>
   <zorder></zorder>
-  <zorder>pbAction</zorder>
-  <zorder>horizontalSpacer_5</zorder>
  </widget>
  <resources/>
  <connections/>

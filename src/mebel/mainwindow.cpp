@@ -9,12 +9,15 @@
 #include <QKeySequence>
 
 #include "sqldatabasehelper.h"
+#include "settings.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    setWindowTitle(Settings::getInstance().getProjectName());
 
     createActions();
     createMenus();
@@ -23,21 +26,13 @@ MainWindow::MainWindow(QWidget *parent) :
     orderInfoWidget_ = new OrderInfoWidget(this);
     customerInfoWidget_ = new CustomerInfoWidget(this);
 
-    ui->tabWidget->addTab(orderInfoWidget_, tr("Заказы"));
-    ui->tabWidget->addTab(customerInfoWidget_, tr("Заказчики"));
+    ui->tabWidget->addTab(orderInfoWidget_, "Заказы");
+    ui->tabWidget->addTab(customerInfoWidget_, "Заказчики");
 
     ui->tabWidget->setCurrentIndex(0);
 //    ui->rbNaturalPerson->click();
 
-    SqlDatabaseHelper sqlDatabaseHelper;
-
-    QString databaseName = "Driver={SQL Server}; Database=mebel;";
-    sqlDatabaseHelper.open("QODBC3", "127.0.0.1", databaseName, "mysql", "mysql");
-
-    QStringList values = sqlDatabaseHelper.select("mebel.tb_order");
-    Q_FOREACH(QString value, values) {
-//        qDebug() << value;
-    }
+    orderInfoWidget_->onUpdateTableWidgetItemData();
 }
 
 MainWindow::~MainWindow()
@@ -48,9 +43,10 @@ MainWindow::~MainWindow()
 void MainWindow::closeEvent(QCloseEvent *event)
 {
     int ret = QMessageBox::information(
-        this, tr("Закрыть программу?"),
-        tr("ВегаМебель"),
-        QMessageBox::Yes | QMessageBox::No);
+                this,
+                Settings::getInstance().getProjectName(),
+                "Закрыть программу?",
+                QMessageBox::Yes | QMessageBox::No);
     if (ret == QMessageBox::No) {
         event->ignore();
     }
@@ -65,7 +61,7 @@ void MainWindow::onAddOrderAct()
 {
     OrderWidget orderWidget(OrderWidget::AddOrder);
     orderWidget.exec();
-//    emit orderInfoWidget_->updateTableWidgetItemData();
+    orderInfoWidget_->onUpdateTableWidgetItemData();
 }
 
 void MainWindow::onViewOrderAct()
@@ -84,11 +80,11 @@ void MainWindow::onDeleteOrderAct()
 {
     int ret = QMessageBox::warning(
         this,
-        tr("Точно удалить заказ?"),
-        tr("mebel"),
+        "Точно удалить заказ?",
+        Settings::getInstance().getProjectName(),
         QMessageBox::Yes | QMessageBox::No);
     if (ret == QMessageBox::Yes) {
-        qDebug() << tr("Заказ удален");
+        qDebug() << "Заказ удален";
     }
 }
 
@@ -120,44 +116,44 @@ void MainWindow::createMenus()
 
 void MainWindow::createActions()
 {
-    actAbout_ = new QAction(QIcon(""), tr("&О программе"), this);
+    actAbout_ = new QAction(QIcon(""), "&О программе", this);
 //    actAbout_->setShortcut(QKeySequence:: ?);
-    actAbout_->setStatusTip(tr("О программе"));
+    actAbout_->setStatusTip("О программе");
     connect(actAbout_, SIGNAL(triggered()), this, SLOT(onAboutAct()));
 
-    actExit_ = new QAction(QIcon(""), tr("&Выход"), this);
+    actExit_ = new QAction(QIcon(""), "&Выход", this);
 //    actExit_->setShortcut(QKeySequence:: ?);
-    actExit_->setStatusTip(tr("Выход"));
+    actExit_->setStatusTip("Выход");
     connect(actExit_, SIGNAL(triggered()), this, SLOT(close()));
 
-    actAddOrder_ = new QAction(QIcon(""), tr("&Добавить"), this);
+    actAddOrder_ = new QAction(QIcon(""), "&Добавить", this);
     actAddOrder_->setShortcut(QKeySequence::New);
-    actAddOrder_->setStatusTip(tr("Добавить новый заказ"));
+    actAddOrder_->setStatusTip("Добавить новый заказ");
     connect(actAddOrder_, SIGNAL(triggered()), this, SLOT(onAddOrderAct()));
 
-    actViewOrder_ = new QAction(QIcon(""), tr("&Просмотреть"), this);
+    actViewOrder_ = new QAction(QIcon(""), "&Просмотреть", this);
 //    actViewOrder_->setShortcut(QKeySequence:: ?);
-    actViewOrder_->setStatusTip(tr("Просмотреть заказ"));
+    actViewOrder_->setStatusTip("Просмотреть заказ");
     connect(actViewOrder_, SIGNAL(triggered()), this, SLOT(onViewOrderAct()));
 
-    actEditOrder_ = new QAction(QIcon(""), tr("&Редактировать"), this);
+    actEditOrder_ = new QAction(QIcon(""), "&Редактировать", this);
 //    actEditOrder_->setShortcut(QKeySequence:: ?);
-    actEditOrder_->setStatusTip(tr("Редактировать заказ"));
+    actEditOrder_->setStatusTip("Редактировать заказ");
     connect(actEditOrder_, SIGNAL(triggered()), this, SLOT(onEditOrderAct()));
 
-    actDeleteOrder_ = new QAction(QIcon(""), tr("&Удалить"), this);
+    actDeleteOrder_ = new QAction(QIcon(""), "&Удалить", this);
     actDeleteOrder_->setShortcut(QKeySequence::Delete);
-    actDeleteOrder_->setStatusTip(tr("Удалить заказ"));
+    actDeleteOrder_->setStatusTip("Удалить заказ");
     connect(actDeleteOrder_, SIGNAL(triggered()), this, SLOT(onDeleteOrderAct()));
 
-    actShowReference_ = new QAction(QIcon(""), tr("&Показать справку"), this);
+    actShowReference_ = new QAction(QIcon(""), "&Показать справку", this);
 //    actShowReference_->setShortcut(QKeySequence:: ?);
-    actShowReference_->setStatusTip(tr("Показать справку"));
+    actShowReference_->setStatusTip("Показать справку");
     connect(actShowReference_, SIGNAL(triggered()), this, SLOT(onShowReferenceAct()));
 
-    actPrint_ = new QAction(QIcon(""), tr("&Печать"), this);
+    actPrint_ = new QAction(QIcon(""), "&Печать", this);
     actPrint_->setShortcut(QKeySequence::Print);
-    actPrint_->setStatusTip(tr("Печать"));
+    actPrint_->setStatusTip("Печать");
     connect(actPrint_, SIGNAL(triggered()), this, SLOT(onPrintAct()));
 
     actViewOrder_->setEnabled(false);
