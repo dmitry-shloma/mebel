@@ -174,6 +174,13 @@ VALUES
     ('в работе'),   -- id | 2
     ('сдан');       -- id | 3
 
+/* Создание структуры таблицы tb_ordered_furniture [заказанная мебель] */
+CREATE TABLE IF NOT EXISTS tb_ordered_furniture (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    order_id INT COMMENT 'Заказ',
+    furniture_type_id INT COMMENT 'Тип мебели'
+) COMMENT = 'Заказанная мебель';
+
 /* Создание внешних ключей таблицы tb_order [заказ] */
 ALTER TABLE tb_order
 ADD FOREIGN KEY (customer_species_id) REFERENCES tb_customer_species(id),
@@ -201,4 +208,10 @@ ON UPDATE CASCADE ON DELETE CASCADE;
 /* Создание внешних ключей таблицы tb_furniture_type [вид мебели] */
 ALTER TABLE tb_furniture_type
 ADD FOREIGN KEY (furniture_species_id) REFERENCES tb_furniture_species(id)
+ON UPDATE CASCADE ON DELETE CASCADE;
+
+/* Создание внешних ключей таблицы tb_ordered_furniture [заказанная мебель] */
+ALTER TABLE tb_ordered_furniture
+ADD FOREIGN KEY (order_id) REFERENCES tb_order(id),
+ADD FOREIGN KEY (furniture_type_id) REFERENCES tb_furniture_type(id)
 ON UPDATE CASCADE ON DELETE CASCADE;
